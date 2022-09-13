@@ -3,57 +3,68 @@ import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import ThemeModeToggler from "../components/ThemeModeToggler";
+import EmailIcon from "@mui/icons-material/Email";
+import { Button } from "@mui/material";
 
 const TopNav = ({ colorInvert = false }) => {
   return (
-    <Box display={"flex"} justifyContent={"flex-end"} alignItems={"center"}>
+    <Box
+      sx={{
+        height: "30px",
+      }}
+      display={"flex"}
+      justifyContent={"flex-end"}
+      alignItems={"center"}
+    >
       <Box marginRight={{ xs: 1, sm: 2 }}>
-        <Link
-          underline="none"
-          component="a"
-          href="/demos"
-          color={colorInvert ? "common.white" : "text.primary"}
-          sx={{ display: "flex", alignItems: "center" }}
+        <Button
+          sx={{
+            height: "inherit",
+            color: "white",
+          }}
+          variant="dark"
+          startIcon={<EmailIcon />}
+
+          // underline="none"
+          // component="a"
+          // href="/docs/introduction"
         >
-          Demos
-          <Box
-            padding={0.5}
-            display={"inline-flex"}
-            borderRadius={1}
-            bgcolor={"primary.main"}
-            marginLeft={1}
-          >
-            <Typography
-              variant={"caption"}
-              sx={{ color: "common.white", lineHeight: 1 }}
-            >
-              new
-            </Typography>
-          </Box>
-        </Link>
+          info@cittacore.com
+        </Button>
       </Box>
       <Box marginRight={{ xs: 1, sm: 2 }}>
-        <Link
-          underline="none"
-          component="a"
-          href="/blocks"
-          color={colorInvert ? "common.white" : "text.primary"}
-          sx={{ display: "flex", alignItems: "center" }}
+        <Button
+          sx={{
+            height: "inherit",
+            color: "white",
+          }}
+          variant="dark"
+          startIcon={<LocalPhoneIcon />}
+
+          // underline="none"
+          // component="a"
+          // href="/docs/introduction"
         >
-          Components
-        </Link>
+          +1 551 229 1852
+        </Button>
       </Box>
       <Box marginRight={{ xs: 1, sm: 2 }}>
-        <Link
-          underline="none"
-          component="a"
-          href="/docs/introduction"
-          color={colorInvert ? "common.white" : "text.primary"}
+        <Button
+          sx={{
+            height: "inherit",
+            color: "white",
+          }}
+          variant="dark"
+          startIcon={<LocationOnIcon />}
+          // underline="none"
+          // component="a"
+          // href="/docs/introduction"
         >
-          Docs
-        </Link>
+          USA | INDIA
+        </Button>
       </Box>
       <Box>
         <ThemeModeToggler />
